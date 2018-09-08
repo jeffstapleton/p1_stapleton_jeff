@@ -1,1 +1,1 @@
-*{padding:0;margin:0}body{color:blue}body{background:#679EB9}
+@import url("https://fonts.googleapis.com/css?family=Roboto");*{padding:0;margin:0;border:0}body{color:blue}*{font-family:'Roboto', sans-serif;text-align:center}article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{display:block}body{width:100%}

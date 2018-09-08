@@ -3,6 +3,16 @@
 @import "colors";
 @import "mixins";
 
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{font-family: 'Roboto', sans-serif;
+text-align:center;}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+	display:block;
+}
+
+
 body {
-    background:$blue;
+    width:100%;
 }
