@@ -1,1 +1,8 @@
+@import "reset";
 @import "typography";
+@import "colors";
+@import "mixins";
+
+body {
+    background:$blue;
+}
