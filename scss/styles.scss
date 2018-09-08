@@ -88,3 +88,19 @@ ul.hamburger {
     height:30px;
     cursor:pointer;
 }
+
+/* ------------ DESKTOP NAV ------------ */
+@media screen and (min-width: 1440px) {
+    .hamburger-container {
+        display:none;
+    }
+    .nav {
+        ul#menu {
+            display:inline;
+            li {
+                display:inline-block;
+                margin-right:-5px;
+            }
+        }
+    }
+}
