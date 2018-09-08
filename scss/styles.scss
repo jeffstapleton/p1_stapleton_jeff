@@ -16,6 +16,11 @@ body {
     width:100%;
 }
 
+header {
+    width:100%;
+}
+
+
 /* ------------ MOBLIE NAV ------------ */
 
 .nav {
@@ -90,7 +95,7 @@ ul.hamburger {
 }
 
 /* ------------ DESKTOP NAV ------------ */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 900px) {
     .hamburger-container {
         display:none;
     }
