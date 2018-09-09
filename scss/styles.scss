@@ -41,11 +41,12 @@ ul#menu {
 	height:100vh;
 	padding-top:100px;
 	li a {
+		font-size:1.5em;
+		font-weight:bold;
 		text-transform:uppercase;
 		margin:auto;
 		display:block;
 		color:#fff;
-		font-size:1.0em;
 		transition:background 0.2s;
 		padding:1.2em;
 		text-decoration:none;
@@ -108,6 +109,10 @@ ul.hamburger {
 			li {
 				display:inline-block;
 				margin-right:-5px;
+				a {
+					font-weight:100;
+					font-size:.9em;
+				}
 			}
 		}
 	}
