@@ -25,11 +25,10 @@ header {
 
 .nav {
     box-sizing:border-box;
-    background-color:$transparent;
     width:100%;
     position:fixed;
     z-index:10;
-    background-color:$transparent-dark;
+    
 }
 
 ul li{
@@ -40,6 +39,9 @@ ul#menu {
     display:none;
     height:100vh;
     padding-top:100px;
+    background-color:$transparent-dark;
+    top:0;
+    bottom:0;
     li a {
         text-transform:uppercase;
         margin:auto;
