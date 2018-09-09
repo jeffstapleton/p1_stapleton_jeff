@@ -1,99 +1,157 @@
+@import "reset";
+@import "colors";
+@import "typography";
+
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 * {
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
 
 body {
 	font-family: 'Montserrat';
-	background-color: #fff;
-	
-	ul li {
-		list-style-type: none;
-	}
-}
-
-.logo {
-    margin:.4em 1em;
-    height:4em;
+	height:100vh;
 }
 
 header {
-    display:flex;
+	display:flex;
+	height:2.8em;
+	z-index:3;
 }
 
+
+.logo {
+	margin:.4em 1em;
+	height:4em;
+}
+
+/* ------------ Nav ------------ */
 
 .nav-container {
-    position:fixed;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    z-index:-1;
-    background-color: $transparent-dark;
-    opacity:0;
-    transition:all 0.2s ease;
-    ul {
-        position:absolute;
-        top:50%;
-        transform:translateY(-50%);
-        width:100%;
-        li {
-            display:block;
-            float:none;
-            width:100%;
-            text-align:center;
-            margin-bottom:10px;
-            &:nth-child(1) a {
-                transition-delay: 0.2s;
-            }
-            &:nth-child(2) a {
-                transition-delay: 0.3s;
-            }
-            &:nth-child(3) a {
-                transition-delay: 0.4s;
-            }
-            &:nth-child(4) a {
-                transition-delay: 0.5s;
-            }
-            &:not(:first-child) {
-                margin-left: 0;
-                a {
-                    paddign:1em 2em;
-                    opacity:0;
-                    color:#fff;
-                    font-size:32px;
-                    font-weight:800;
-                    transform:translateY(-20px);
-                    transition:all 0.2s ease;
-                    
-                }
-            }
-           
-        }
-    }
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:-1;
+	background-color:$transparent-dark;
+	opacity:0;
+	transition:all 0.2s ease;
+	ul {
+		position:absolute;
+		top:50%;
+		transform:translateY(-50%);
+		width:100%;
+		li {
+			display:block;
+			float:none;
+			width:100%;
+			text-align:center;
+			margin-bottom:10px;
+			&:nth-child(1) a {
+				transition-delay: 0.2s;
+			}
+			&:nth-child(2) a {
+				transition-delay: 0.3s;
+			}
+			&:nth-child(3) a {
+				transition-delay: 0.4s;
+			}
+			&:nth-child(4) a {
+				transition-delay: 0.5s;
+			}
+			&:not(:first-child) {
+				margin-left: 0;
+				a {
+					paddign:10px 20px;
+					opacity:0;
+					color:#fff;
+					font-size:32px;
+					font-weight:800;
+					transform:translateY(-20px);
+					transition:all 0.2s ease;
+					
+				}
+			}
+		}
+	}
 }
 
+/* ------------ Hamburger Style ------------ */
+.nav-open {
+	position:fixed;
+	right:10px;
+	top:10px;
+	display:block;
+	width:60px;
+	height:60px;
+	cursor:pointer;
+	z-index:999;
+	i {
+		display:block;
+		width:20px;
+		height:2px;
+		background:$transparent-dark;
+		border-radius:2px;
+		margin-left:20px;
+		&:nth-child(1) {
+			margin-top: 20px;
+        transition: transform 0.3s ease;
+    }
+    &:nth-child(2) {
+        margin-top: 4px;
+        transition: transform 0.3s ease;
+    }
+    &:nth-child(3) {
+        margin-top: 4px;
+        transition: transform 0.3s ease;
+    }
+	}
+}
+
+#nav:checked + .nav-open i {
+	background:#fff;
+	&:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 4px);
+	}
+	&:nth-child(2) {
+    transform: translateX(100px);
+	}
+	&:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+	}
+}
+
+#nav:checked ~ .nav-container {
+	z-index:888;
+	opacity:1;
+	ul li a {
+		opacity:1;
+		transform:translateY(0);
+	}
+}
+
+.hidden {
+	display:none;
+}
 /*
 nav {
-    height 2em;
-    background:#fff;
-    ul {
-        float:right;
-        li {
-            float:left;
-            a {
-                display:inline-block;
-                outline:none;
-                color:#fff;
-                text-decoration:none;
-            }
-            a:hover {
-                background-color:($transparent-dark, 10%);
-                transition:background 0.2s;
-            }
-        }
-    }
+height 2em;
+background:#fff;
+ul {
+float:right;
+li {
+float:left;
+a {
+display:inline-block;
+outline:none;
+color:#fff;
+text-decoration:none;
+}
+a:hover {
+background-color:($transparent-dark, 10%);
+transition:background 0.2s;
+}
+}
+}
 } */
