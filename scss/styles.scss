@@ -1,126 +1,99 @@
-@import "reset";
-@import "typography";
-@import "colors";
-@import "mixins";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-*{font-family: 'Montserrat', sans-serif;
-text-align:center;}
-
-article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
-	display:block;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    width:100%;
+	font-family: 'Montserrat';
+	background-color: #fff;
+	
+	ul li {
+		list-style-type: none;
+	}
+}
+
+.logo {
+    margin:.4em 1em;
+    height:4em;
 }
 
 header {
-    width:100%;
+    display:flex;
 }
 
 
-/* ------------ MOBLIE NAV ------------ */
-
-.nav {
-    box-sizing:border-box;
-    width:100%;
+.nav-container {
     position:fixed;
-    z-index:10;
-    
-}
-
-ul li{
-    list-style-type: none;
-}
-
-ul#menu {
-    display:none;
-    height:100vh;
-    padding-top:100px;
-    background-color:$transparent-dark;
     top:0;
-    bottom:0;
-    li a {
-        text-transform:uppercase;
-        margin:auto;
-        display:block;
-        color:#fff;
-        font-size:1.0em;
-        transition:background 0.2s;
-        padding:1.2em;
-        text-decoration:none;
-    }
-    a:hover {
-        background-color:darken($transparent-dark,10%);
-    }
-}
-
-/* ------------ Icon Animation ------------*/
-
-%burger {
-    height:2px;
-    background:#fff;
-    content:'';
-    position:relative;
-    transition:.25s ease-in-out;
-}
-.hidden {
+    left:0;
+    height:100%;
+    width:100%;
+    z-index:-1;
+    background-color: $transparent-dark;
     opacity:0;
-}
-.rot45deg {
-    transform:rotate(45deg);
-    top:6px !important;
-}
-.rot-45deg {
-    transform:rotate(-45deg);
-}
-ul.hamburger {
-    display:block;
-    li {
-        @extend %burger;
-        &:nth-child(1) {
-            top:0;
-        }
-        &:nth-child(2) {
-            top:5px;
-        }
-        &:nth-child(3) {
-            top:10px;
+    transition:all 0.2s ease;
+    ul {
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        width:100%;
+        li {
+            display:block;
+            float:none;
+            width:100%;
+            text-align:center;
+            margin-bottom:10px;
+            &:nth-child(1) a {
+                transition-delay: 0.2s;
+            }
+            &:nth-child(2) a {
+                transition-delay: 0.3s;
+            }
+            &:nth-child(3) a {
+                transition-delay: 0.4s;
+            }
+            &:nth-child(4) a {
+                transition-delay: 0.5s;
+            }
+            &:not(:first-child) {
+                margin-left: 0;
+                a {
+                    paddign:1em 2em;
+                    opacity:0;
+                    color:#fff;
+                    font-size:32px;
+                    font-weight:800;
+                    transform:translateY(-20px);
+                    transition:all 0.2s ease;
+                    
+                }
+            }
+           
         }
     }
 }
 
-.hamburger-container {
-    width:25px;
-    margin:1.2em 1.6em;
-    height:25px;
-    cursor:pointer;
-}
-
-/* ------------ DESKTOP NAV ------------ */
-@media screen and (min-width: 900px) {
-    .hamburger-container {
-        display:none;
-    }
-    .nav {
-        ul#menu {
-            display:inline;
-            li {
+/*
+nav {
+    height 2em;
+    background:#fff;
+    ul {
+        float:right;
+        li {
+            float:left;
+            a {
                 display:inline-block;
-                margin-right:-5px;
+                outline:none;
+                color:#fff;
+                text-decoration:none;
+            }
+            a:hover {
+                background-color:($transparent-dark, 10%);
+                transition:background 0.2s;
             }
         }
     }
-}
-
-/* ------------ Hero Image ------------ */
-
-.hero-bg img {
-    max-width:100%;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    position:relative;
-}
+} */
